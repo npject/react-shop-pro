@@ -26,24 +26,24 @@ function Cart() {
             <div className="row">
                 {itemsCart.length ? itemsCart.map(item=>
                     <div className="col-lg-3 mb-3" key={item.id}>
-                        <div className="card">
+                        <div className="card shadow-sm">
                           <img src={item.images} className="card-img-top object-fit-contain img-fluid"/>
                           <div className="card-body">
                             <h5 className="card-title text-truncate">{item.title}</h5>
                             <p className="card-text text-price">قیمت: {item.price}$</p>
                             <div className="row">
                             <div className="btn-group btn-group-sm col-5">
-                                <button type="button" class="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-plus"></FontAwesomeIcon></button>
+                                <button type="button" class="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-plus" /></button>
                                 <button type="button" class="btn btn-outline-secondary">{item.quantity}</button>
-                                <button type="button" class="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-minus"></FontAwesomeIcon></button>
+                                <button type="button" class="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-minus" /></button>
                             </div>
                             <div className="col-2 d-flex align-items-center">
                               <FontAwesomeIcon onClick={()=> removeItem(item.id)}
-                               icon="fa-regular fa-trash-can" className="fs-5"></FontAwesomeIcon>
+                               icon="fa-regular fa-trash-can" className="fs-5" />
                             </div>
                             <Link to={"/products/" + item.id} target="_blank"
                              className="btn border-0 btn-more btn-sm col-5">جزئیات بیشتر
-                                <FontAwesomeIcon icon="fa-solid fa-angle-left"></FontAwesomeIcon>
+                                <FontAwesomeIcon icon="fa-solid fa-angle-left" />
                             </Link>
                             </div>
                           </div>

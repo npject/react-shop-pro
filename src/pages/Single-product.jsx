@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export async function loader({params}) {
     const idProduct = await params.id;
-    const data = await fetch('https://api.escuelajs.co/api/v1/products/'+ idProduct);
+    const data = await fetch(`https://api.escuelajs.co/api/v1/products/${idProduct}`);
     const response =await data.json();
 
     return {response}
@@ -58,7 +58,7 @@ function SingleProduct() {
                                           <div className="row">
                                           <button href="#" className="btn btn-custom col-12"
                                            onClick={() => addToCart(response)}>افزودن به سبد خرید 
-                                            <FontAwesomeIcon icon="fa-solid fa-cart-plus"></FontAwesomeIcon>
+                                            <FontAwesomeIcon icon="fa-solid fa-cart-plus" />
                                            </button>
                                           </div>
                                         </div>

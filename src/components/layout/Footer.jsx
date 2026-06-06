@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { themeContext } from "../../context/themeContext";
+import { themeContext } from "/src/context/themeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function Footer() {
@@ -23,18 +24,18 @@ function Footer() {
 
         {/* menu in mobile */}
         
-        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasMenu" aria-labelledby="offcanvasResponsiveLabel">
-          <div className="offcanvas-header">
-            <button type="button" className={`btn ${color == 'light' ? 'text-dark' : 'text-light'}`} data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu" aria-label="Close">
-                <i className="fa-solid fa-close"></i>
+        <div class="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasMenu" aria-labelledby="offcanvasResponsiveLabel">
+          <div class="offcanvas-header">
+            <button type="button" class={`btn ${color == 'light' ? 'text-dark' : 'text-light'}`} data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu" aria-label="Close">
+                <FontAwesomeIcon icon="fa-solid fa-close" />
             </button>
-            <h5 className={`offcanvas-title me-auto ${color == 'light' ? 'text-dark' : 'text-light'}`} id="offcanvasResponsiveLabel">منو</h5>
+            <h5 class={`offcanvas-title me-auto ${color == 'light' ? 'text-dark' : 'text-light'}`} id="offcanvasResponsiveLabel">منو</h5>
           </div>
-          <div className="offcanvas-body">
+          <div class="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0 pe-0" id="main-menu">
                 <li className="nav-item ms-3" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
                     <NavLink className={({isActive,isPending})=>isActive ? `active nav-link py-3 px-1 ${colorNavLink}` : `nav-link py-3 px-1 ${colorNavLink}`}
-                 to={"/"}><i className="fa-solid fa-house"></i>خانه</NavLink>
+                 to={"/"}><FontAwesomeIcon icon="fa-solid fa-house" />خانه</NavLink>
                 </li>
                 <li className="nav-item ms-3" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
                     <NavLink className={({isActive,isPending})=>isActive ? `active nav-link py-3 px-1 ${colorNavLink}` : `nav-link py-3 px-1 ${colorNavLink}`}
@@ -57,21 +58,21 @@ function Footer() {
                 <li className="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
                   <NavLink className={({isActive,isPending})=>isActive ? `active nav-link py-3 px-1 ${colorNavLink}` : `nav-link py-3 px-1 ${colorNavLink}`}
                  to={"/cart"}>
-                  <i className="fa-solid fa-cart-shopping"></i>
+                  <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
                  </NavLink>
                 </li>
                 <li className="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
                   <NavLink className={({isActive,isPending})=>isActive ? `active nav-link py-3 px-1 ${colorNavLink}` : `nav-link py-3 px-1 ${colorNavLink}`}
                  to={"/blog"}>
-                  <i className="fa-solid fa-circle-user"></i>
+                  <FontAwesomeIcon icon="fa-solid fa-circle-user" />
                  </NavLink>
                 </li>
                 <li className="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu" onClick={()=> changeColor(
                   color == 'light' ? 'dark' : 'light'
                 )}>
                   <div className={`nav-link py-3 px-1 ${colorNavLink}`} >
-                    {color == 'light' && <i className="fa-solid fa-sun"></i> }
-                    {color == 'dark' && <i className="fa-solid fa-moon"></i> }
+                    {color == 'light' && <FontAwesomeIcon class="fa-solid fa-sun" /> }
+                    {color == 'dark' && <FontAwesomeIcon class="fa-solid fa-moon" /> }
                  </div>
                 </li>
               </ul>

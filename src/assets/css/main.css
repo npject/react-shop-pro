@@ -136,6 +136,11 @@ code {
   color: #fff;
   transition: all ease-in-out .4s;
 }
+#products .btn-check:checked+.btn,
+#products .btn-check+.btn.disabled{
+  background-color: var(--bg-btn);
+  color: #fff;
+}
 #products .text-price,
 #cart .text-price{
   color: var(--bittersweet);
@@ -234,7 +239,91 @@ code {
 #cart .fa-minus{
   font-size: x-small;
 }
+#products #cartShoppingIcon{
+  position: fixed;
+  z-index: 1000;
+  right: 25px;
+  bottom: 20px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all ease .4s;
+}
+#products #cartShoppingIcon.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+#products #cartShoppingIcon.hidden{
+  opacity: 0;
+  transform: translateY(60px);
+}
+#products #cartShoppingIcon div{
+  transition: all 0.3s ease;
+  background-color: rgba(0, 131, 167, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  cursor: pointer;
+}
+#products #cartShoppingIcon #cartShoppingSvg{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+#products #cartShoppingIcon div:hover{
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+#products #cartShoppingIcon span.badge{
+  position: absolute;
+  z-index: 1001;
+  right: 77px;
+  bottom: 34px;
+  font-size: 11px;
+  background-color: rgba(0, 131, 167, 0.85);
+  animation: popIn .5s ease;
+}
+#products #cartShoppingIcon .fa-circle-xmark{
+  color: rgba(0, 131, 167, 0.85);
+}
+#products #cartShoppingIcon .fa-circle-xmark:hover{
+  color: #3f3d56;
+}
+.tick-icon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+#cartShoppingIcon:hover #cartShoppingIcon path[fill="#f2f2f2"] {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+#cartShoppingIcon div:hover .tick-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  animation: tickPop 0.3s ease forwards;
+}
+#cartShoppingIcon .tick-icon path{
+  stroke: #C7FFF3;
+  filter: drop-shadow(0 0 4px rgba(199, 255, 243, 0.4));
+} 
 
+
+
+
+
+
+
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes tickPop {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  60% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
 
 
 

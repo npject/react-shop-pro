@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useMemo } from "react";
+import { useEffect, useState, useContext, useMemo, useCallback } from "react";
 import Loading from "../components/ui/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartShoppingSvg from "/src/assets/img/svg/undraw_empty-cart_574u.svg?react";
@@ -11,7 +11,9 @@ function Products() {
     const { changeCount } = useContext(productsContext);
     const [checkedItems,setCheckedItems] = useState({});
     const checkedCount = Object.values(checkedItems).filter(Boolean).length;
-    const prevProducts = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const [prevProducts,setPrevProducts] = useState(() => {
+        return JSON.parse(localStorage.getItem('cartItems')) || [];
+    });
     const isInCart = useMemo(
         () => new Set(prevProducts.map(p => p.id)), 
         [prevProducts]
@@ -23,13 +25,13 @@ function Products() {
         setData(res);
         setLoading(false);
     };
-    const checkedItemToAdd = (itemId)=> {
+    const checkedItemToAdd = useCallback((itemId)=> {
         setCheckedItems((items)=>({
             ...items,
             [itemId]: !items[itemId]
         }));
-    }
-    const addCheckedItemsToCart = async ()=> {
+    },[]);
+    const addCheckedItemsToCart = useCallback(async ()=> {
         const idItemsToFetch = Object.keys(checkedItems).filter(key => checkedItems[key] === true);
         const fetches = idItemsToFetch.map(id => fetch(`https://api.escuelajs.co/api/v1/products/${id}`));
         const responses = await Promise.all(fetches);
@@ -40,8 +42,9 @@ function Products() {
         ];
         localStorage.setItem('cartItems',JSON.stringify(finalProducts));   
         changeCount(finalProducts.length);
+        setPrevProducts(finalProducts);
         setCheckedItems({});
-    }
+    }, [checkedItems, prevProducts, changeCount]);
     useEffect(()=>{
         getData();
     },[]);
@@ -59,7 +62,7 @@ function Products() {
                  <ProductCart 
                     key={item.id}
                     item={item}
-                    checkedItems={checkedItems}
+                    isChecked={!!checkedItems[item.id]}
                     isInCart={isInCart}
                     checkedItemToAdd={checkedItemToAdd}
                  />   

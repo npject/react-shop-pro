@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-function ProductCart ({item, checkedItems, isInCart, checkedItemToAdd}) {
-    console.log('Render ProductCard', item.id, { checkedItems, isInCart });
+function ProductCart ({item, isChecked, isInCart, checkedItemToAdd}) {
+    console.log('Render ProductCard', item.id, { isChecked, isInCart });
 
     return (
         <>
@@ -16,7 +16,7 @@ function ProductCart ({item, checkedItems, isInCart, checkedItemToAdd}) {
                 <p className="card-text text-price">قیمت: {item.price}$</p>
                 <div className="row">
                 <input type="checkbox" class="btn-check" id={`btn-check-${item.id}`} autocomplete="off"
-                  checked={checkedItems[item.id] || false} onChange={()=> checkedItemToAdd(item.id)}/>
+                  checked={isChecked || false} onChange={()=> checkedItemToAdd(item.id)}/>
                 <label class={`btn btn-custom btn-sm col-7 shadow-sm d-flex justify-content-center
                  align-items-center ${isInCart.has(item.id) ? "disabled" : ""}`}
                  htmlFor={`btn-check-${item.id}`}>
@@ -25,7 +25,7 @@ function ProductCart ({item, checkedItems, isInCart, checkedItemToAdd}) {
                             <FontAwesomeIcon icon="fa-solid fa-check" className="fs-6" />
                             <span>افزوده شد</span>
                         </>
-                        ) : checkedItems[item.id] ? (
+                        ) : isChecked ? (
                         <>
                             <FontAwesomeIcon icon="fa-solid fa-cart-arrow-down" className="fs-6" />
                             <span>در حال افزودن...</span>

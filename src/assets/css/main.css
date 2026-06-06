@@ -49,16 +49,16 @@ background: linear-gradient(90deg, rgba(22, 89, 110, 1) 0%,
 */
 @font-face {
   font-family: 'b-yekan';
-  src: url('../src/assets/fonts/iranyekanwebregular.eot') format('eot'),
-  url('../src/assets/fonts/iranyekanwebregular.ttf') format('ttf'),
-  url('../src/assets/fonts/iranyekanwebregular.woff') format('woff');
+  src: url('/src/assets/fonts/iranyekanwebregular.eot') format('eot'),
+  url('/src/assets/fonts/iranyekanwebregular.ttf') format('ttf'),
+  url('/src/assets/fonts/iranyekanwebregular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'b-yekan-bold';
-  src: url('../src/assets/fonts/iranyekanwebbold.eot') format('eot'),
-  url('../src/assets/fonts/iranyekanwebbold.ttf') format('ttf'),
-  url('../src/assets/fonts/iranyekanwebbold.woff') format('woff');
+  src: url('/src/assets/fonts/iranyekanwebbold.eot') format('eot'),
+  url('/src/assets/fonts/iranyekanwebbold.ttf') format('ttf'),
+  url('/src/assets/fonts/iranyekanwebbold.woff') format('woff');
 }
 body {
   margin: 0;

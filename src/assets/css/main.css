@@ -1,4 +1,5 @@
 :root{
+    /* ====================== COLOR PALETTE ====================== */
   --eerie-black: #212529ff;
   --gunmetal: #262b2fff;
   --gunmetal-2: #2b3035ff;
@@ -10,7 +11,7 @@
   --bittersweet: #f07167ff;
   --light-color: #F8F5EE;
   --bg-color:#DDE6EA;
-  /* light mode */
+  /* ====================== LIGHT MODE ====================== */
   --primary-bg: ;
   --bg-main: #d9e2e8;
   --bg-body: #fafaf7;
@@ -24,7 +25,7 @@
   --color-paragraph: var(--eerie-black);
 
 }
-/* Dark mode */
+/* ====================== DARK MODE ====================== */
 [data-theme="dark"] { /* or body.dark-mode */
   /* --primary-bg: ; */
   --bg-main: #4a5d6c;   /* #44515a */
@@ -79,6 +80,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* ====================== NAV ====================== */
 .navbar{
   background-color: var(--bg-main);
 }
@@ -103,6 +105,7 @@ code {
 .offcanvas{
   background-color: var(--bg-card);
 }
+/* ====================== PRODUCTS ====================== */
 #products .card,
 #cart .card{
   border-color: var(--bg-card);
@@ -152,92 +155,6 @@ code {
 #products .card h5,
 #cart .card h5{
   color: var(--white-black);
-}
-#single-product .card{
-  background-color: transparent;
-}
-#single-product .card .btn-custom{
-  border-color: var(--bg-btn);
-  color: var(--bg-btn);
-  transition: all ease-in-out .4s;
-}
-#single-product .card .btn-custom:hover{
-  background-color: var(--bg-btn);
-  color: #fff;
-  transition: all ease-in-out .4s;
-}
-#single-product .text-price{
-  color: var(--bittersweet);
-}
-#single-product .card img{
-  height: 450px;
-}
-#single-product .card h1{
-  color: var(--bg-btn);
-}
-#single-product .card p span{
-  color: var(--color-btn-more);
-}
-#loading .spinner-border{
-  color: var(--verdigris);
-}
-.btn-grad {
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-  background-image: linear-gradient(to right, rgba(22, 89, 110, 1) 0%,
-   rgba(0, 175, 185, 1) 51%, rgba(22, 89, 110, 1) 100% );
-  border: solid 2px rgba(22, 89, 110, 1);
-}
-.btn-grad:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
-}
-#p-404 h3,
-#cart h3{
-  /* font-size: 72px; */
-    background: linear-gradient(90deg, rgba(0, 175, 185, 1) 30%,
-     rgba(0, 129, 167, 1) 60%, rgba(22, 89, 110, 1) 90%);
-    /* background: linear-gradient(90deg, rgba(0, 175, 185, 1) 60%,
-     rgba(0, 129, 167, 1) 90%, rgba(22, 89, 110, 1) 100%);  */
-    /* background: linear-gradient(90deg, rgba(22, 89, 110, 1) 0%,
-     rgba(0, 129, 167, 1) 10%, rgba(0, 175, 185, 1) 30%); */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    width: max-content;
-}
-.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
-  border-top-left-radius: initial !important;
-  border-bottom-left-radius: initial !important;
-  border-top-right-radius: var(--bs-btn-border-radius);
-  border-bottom-right-radius: var(--bs-btn-border-radius);
-}
-.btn-group>.btn:nth-child(n+3), .btn-group>:not(.btn-check)+.btn {
-  border-top-left-radius: var(--bs-btn-border-radius);
-  border-bottom-left-radius: var(--bs-btn-border-radius);
-  border-top-right-radius: initial !important;
-  border-bottom-right-radius: initial !important;
-}
-#cart .fa-trash-can{
-  color: var(--bittersweet);
-}
-#cart .fa-trash-can:hover{
-  color: rgb(240, 66, 54);
-}
-/* color: rgb(218, 65, 54); */
-#cart .fa-plus{
-  font-size: x-small;
-}
-#cart .fa-minus{
-  font-size: x-small;
 }
 #products #cartShoppingIcon{
   position: fixed;
@@ -307,6 +224,95 @@ code {
   stroke: #C7FFF3;
   filter: drop-shadow(0 0 4px rgba(199, 255, 243, 0.4));
 } 
+/* ====================== SINGLE PRODUCT ====================== */
+#single-product .card{
+  background-color: transparent;
+}
+#single-product .card .btn-custom{
+  border-color: var(--bg-btn);
+  color: var(--bg-btn);
+  transition: all ease-in-out .4s;
+}
+#single-product .card .btn-custom:hover{
+  background-color: var(--bg-btn);
+  color: #fff;
+  transition: all ease-in-out .4s;
+}
+#single-product .text-price{
+  color: var(--bittersweet);
+}
+#single-product .card img{
+  height: 450px;
+}
+#single-product .card h1{
+  color: var(--bg-btn);
+}
+#single-product .card p span{
+  color: var(--color-btn-more);
+}
+/* ====================== CART ====================== */
+#cart .fa-trash-can{
+  color: var(--bittersweet);
+}
+#cart .fa-trash-can:hover{
+  color: rgb(240, 66, 54);
+}
+/* color: rgb(218, 65, 54); */
+#cart .fa-plus{
+  font-size: x-small;
+}
+#cart .fa-minus{
+  font-size: x-small;
+}
+/* ====================== UTILITY ====================== */
+#loading .spinner-border{
+  color: var(--verdigris);
+}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  background-image: linear-gradient(to right, rgba(22, 89, 110, 1) 0%,
+   rgba(0, 175, 185, 1) 51%, rgba(22, 89, 110, 1) 100% );
+  border: solid 2px rgba(22, 89, 110, 1);
+}
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+#p-404 h3,
+#cart h3{
+  /* font-size: 72px; */
+    background: linear-gradient(90deg, rgba(0, 175, 185, 1) 30%,
+     rgba(0, 129, 167, 1) 60%, rgba(22, 89, 110, 1) 90%);
+    /* background: linear-gradient(90deg, rgba(0, 175, 185, 1) 60%,
+     rgba(0, 129, 167, 1) 90%, rgba(22, 89, 110, 1) 100%);  */
+    /* background: linear-gradient(90deg, rgba(22, 89, 110, 1) 0%,
+     rgba(0, 129, 167, 1) 10%, rgba(0, 175, 185, 1) 30%); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: max-content;
+}
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-left-radius: initial !important;
+  border-bottom-left-radius: initial !important;
+  border-top-right-radius: var(--bs-btn-border-radius);
+  border-bottom-right-radius: var(--bs-btn-border-radius);
+}
+.btn-group>.btn:nth-child(n+3), .btn-group>:not(.btn-check)+.btn {
+  border-top-left-radius: var(--bs-btn-border-radius);
+  border-bottom-left-radius: var(--bs-btn-border-radius);
+  border-top-right-radius: initial !important;
+  border-bottom-right-radius: initial !important;
+}
 
 
 
@@ -315,6 +321,7 @@ code {
 
 
 
+/* ====================== ANIMATIONS ====================== */
 @keyframes popIn {
   0% { transform: scale(0); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }

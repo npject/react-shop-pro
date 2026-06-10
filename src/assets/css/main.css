@@ -240,6 +240,19 @@ code {
 #cartShoppingIcon .tick-icon path{
   stroke: #C7FFF3;
   filter: drop-shadow(0 0 4px rgba(199, 255, 243, 0.4));
+}
+#products .pagination .page-link{
+  border-color: var(--verdigris);
+  background-color: transparent;
+}
+#products .pagination .page-link:hover{
+  background-color: var(--bg-card);
+}
+#products .pagination .page-item:not(.active) .page-link{
+  color: var(--verdigris);
+}
+#products .pagination .active>.page-link{
+  background-color: var(--verdigris);
 } 
 /* ====================== SINGLE PRODUCT ====================== */
 #single-product .card{

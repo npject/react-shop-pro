@@ -258,8 +258,14 @@ code {
 #single-product .text-price{
   color: var(--bittersweet);
 }
-#single-product .card img{
-  height: 450px;
+#single-product .card img.product-main-img{
+  width: 370px;
+  height: 370px;
+}
+#single-product .card img.product-thumbs{
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
 }
 #single-product .card h1{
   color: var(--bg-btn);

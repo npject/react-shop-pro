@@ -14,16 +14,27 @@ function Products() {
     const [prevProducts,setPrevProducts] = useState(() => {
         return JSON.parse(localStorage.getItem('cartItems')) || [];
     });
+    const [hasMore,setHasMore] = useState(true);
+    const [page,setPage] = useState(1);
+    const limit = 20;
+    const totalPages = 3;
     const isInCart = useMemo(
         () => new Set(prevProducts.map(p => p.id)), 
         [prevProducts]
     );
-    const getData = async ()=>{
-        setLoading(true);
-        const fetchData = await fetch('https://api.escuelajs.co/api/v1/products');
-        const res = await fetchData.json();
-        setData(res);
-        setLoading(false);
+    const getData = async (page)=>{
+        try {
+            setLoading(true);
+            const offset = (page - 1) * limit;
+            const fetchData = await fetch(`https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`);
+            const res = await fetchData.json();
+            setData(res);    
+            setHasMore(res.length === limit);
+        } catch (error) {
+            console.error("Error fetching data::::", error);
+        } finally {
+            setLoading(false);
+        }
     };
     const checkedItemToAdd = useCallback((itemId)=> {
         setCheckedItems((items)=>({
@@ -46,8 +57,8 @@ function Products() {
         setCheckedItems({});
     }, [checkedItems, prevProducts, changeCount]);
     useEffect(()=>{
-        getData();
-    },[]);
+        getData(page);
+    },[page]);
     console.log(checkedItems)
     
 
@@ -67,6 +78,29 @@ function Products() {
                     checkedItemToAdd={checkedItemToAdd}
                  />   
                 ))}
+            </div>
+            <div className="row my-3">
+                <nav aria-label="Page navigation example">
+                  <ul className="pagination justify-content-center pe-0">
+                    <li className="page-item">
+                      <button onClick={() => {setPage(prev => Math.max(prev - 1, 1))}} disabled={page === 1}
+                       className={`page-link rounded-start-0 rounded-end-2 ${page === 1 ? 'disabled' : ''}`} aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </button>
+                    </li>
+                    {Array.from({length: totalPages}, (_,index) => index + 1).map(number => 
+                        <li key={number} className={`page-item ${page === number ? 'active' : ''}`}>
+                            <button onClick={() => {setPage(number)}} className="page-link">{number}</button>
+                        </li>         
+                    )}
+                    <li className="page-item">
+                      <button onClick={() => {setPage(prev => prev + 1);console.log(data)}} disabled={!hasMore}
+                       className="page-link rounded-end-0 rounded-start-2" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
             </div>
         </div>
         <div id='cartShoppingIcon' className={`d-flex justify-content-center align-items-center

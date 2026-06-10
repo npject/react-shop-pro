@@ -21,6 +21,7 @@ function SingleProduct() {
     const { color } = useContext(themeContext);
     const colorParagraph = `${color == 'light' ? 'text-body-tertiary' : 'text-white-50' }`;
     const [cartItems,setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
+    const [mainImage,setMainImage] = useState(response.images[0]);
 
     const addToCart = (item)=> {
         const isProductsInCart = cartItems.find((cartItem) => cartItem.id == item.id);
@@ -65,7 +66,26 @@ function SingleProduct() {
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <img src={response.images} className="object-fit-contain img-fluid rounded-2"/>
+                                    <div className="row">
+                                        <div className="col-12 d-flex justify-content-center">
+                                            <img src={mainImage} className="product-main-img object-fit-contain img-fluid rounded-start-5 rounded-bottom-5"/>
+                                        </div>
+                                        <div className="col-12 d-flex justify-content-center mt-1">
+                                            {response.images.map((image,index,arr) => 
+                                                <img
+                                                 key={index}
+                                                 src={image}
+                                                 onClick={() => {setMainImage(image)}}
+                                                 className={`product-thumbs object-fit-contain img-fluid ms-1
+                                                    ${mainImage === image ? 'mt-0' : 'mt-1'}
+                                                  ${
+                                                    index === 0 && index !== arr.length -1 ? 'rounded-end-5 rounded-bottom-5' : 
+                                                    index === arr.length -1 && index !== 0  ? 'rounded-start-5 rounded-bottom-5' : 
+                                                    'rounded-bottom-5'
+                                                 }`}/>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                           </div>
                         </div>

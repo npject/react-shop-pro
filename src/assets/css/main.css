@@ -32,6 +32,8 @@
   --text-post-2: var(--verdigris);
   --text-post-3: #ffb978;
   --text-post-4: var(--bittersweet);
+  /* input and label */
+  --bg-label: rgba(0, 128, 167, 0.171);
 }
 /* ====================== DARK MODE ====================== */
 [data-theme="dark"] { /* or body.dark-mode */
@@ -52,6 +54,8 @@
   --bg-post-3: transparent;
   --bg-post-4: transparent;
   --text-post-1: #008ab5;
+  /* input and label */
+  --bg-label: #00afb921;
 }
 /*
 
@@ -96,6 +100,9 @@ code {
 }
 .fs-14{
   font-size: 14px;
+}
+.color-main{
+  color: var(--bg-btn);
 }
 /* ====================== NAV ====================== */
 .navbar{
@@ -381,10 +388,23 @@ code {
   border-top-right-radius: initial !important;
   border-bottom-right-radius: initial !important;
 }
-
-
-
-
+.form-control:focus,
+.form-select:focus{
+  border-color: var(--bg-btn);
+  box-shadow: 0 0 0 .25rem var(--bg-label);
+}
+.input-group .input-group-text{
+  color: var(--bg-btn);
+  background-color: var(--bg-label);
+}
+.input-group .btn{
+  color: var(--bg-btn);
+  border-color: var(--bg-btn);
+}
+.input-group .btn:hover{
+  color: #fff;
+  background-color: var(--bg-btn);
+}
 
 
 

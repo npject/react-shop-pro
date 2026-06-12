@@ -173,7 +173,8 @@ code {
   color: var(--bittersweet);
 }
 #products .card img,
-#cart .card img{
+#cart .card img,
+#products .skeleton-product .card-img-top{
   height: 200px;
 }
 #products .card h5,

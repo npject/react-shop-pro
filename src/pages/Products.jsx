@@ -5,6 +5,7 @@ import CartShoppingSvg from "/src/assets/img/svg/undraw_empty-cart_574u.svg?reac
 import { productsContext } from "/src/context/ProductsContext";
 import ProductCart from "/src/components/products/ProductCart";
 import { themeContext } from "../context/themeContext";
+import SkeletonProduct from "../components/ui/SkeletonProduct";
 
 function Products() {
     const { color } = useContext(themeContext);
@@ -129,6 +130,9 @@ function Products() {
             </div>
             {loading && (<Loading />)}
             <div className="row">
+                {loading && Array.from({length: limit}).map(index => 
+                        <SkeletonProduct key={index} />         
+                )}
                 {!loading && data.map(item=> (
                  <ProductCart 
                     key={item.id}

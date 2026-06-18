@@ -34,6 +34,8 @@
   --text-post-4: var(--bittersweet);
   /* input and label */
   --bg-label: rgba(0, 128, 167, 0.171);
+  /* blog */
+  --bg-card-comments: #fafaf7ad;
 }
 /* ====================== DARK MODE ====================== */
 [data-theme="dark"] { /* or body.dark-mode */
@@ -56,6 +58,8 @@
   --text-post-1: #008ab5;
   /* input and label */
   --bg-label: #00afb921;
+  /* blog */
+  --bg-card-comments: #2a2f34ad;
 }
 /*
 
@@ -339,6 +343,49 @@ code {
 }
 #blog .post:nth-child(4n) .card-title{
   color: var(--text-post-4);
+}
+/* ====================== SINGLE POST ====================== */
+#single-post .intro{
+  /* background: #16596EFF;
+  background: linear-gradient(90deg, rgba(22, 89, 110, .4) 0%, rgba(0, 129, 167, .4) 50%
+  , rgba(22, 89, 110, .4) 100%); */
+  background: url("/src/assets/img/gradients/gradient-1.svg") no-repeat bottom center;
+  height: 350px;
+}
+#single-post .intro h1{
+  filter: drop-shadow(0px 2px 2px var(--bg-body));
+}
+#single-post .intro p{
+  filter: drop-shadow(0px 2px 1px var(--bg-body));
+}
+#single-post .skeleton-post-image{
+  aspect-ratio: 1200 / 675;
+}
+#single-post #main-content-post{
+  margin-top: -50px;
+}
+#single-post .comments{
+  height: 312px;
+  background: url("/src/assets/img/gradients/gradient-3.svg") no-repeat bottom center;
+}
+#single-post .swiper-comments{
+  height: 280px;
+  padding-top: 30px;
+}
+#single-post .swiper-comments .card{
+  height: 220px;
+  background-color: var(--bg-card-comments);
+  border-color: var(--border-card-hover);
+}
+#single-post .swiper-comments .card>div:first-child{
+  width: 60px;
+  height: 60px;
+  background-color: var(--bg-body);
+  border-color: var(--border-card-hover) !important;
+  margin-top: -30px;
+}
+.swiper-pagination-bullet-active{
+  background-color: var(--border-card-hover) !important;
 }
 /* ====================== UTILITY ====================== */
 #loading .spinner-border{

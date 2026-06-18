@@ -13,6 +13,7 @@ import AboutUs from './pages/About-us';
 import Cart from './pages/Cart';
 import PageNotFound from './pages/PageNotFound';
 import SingleProduct, {loader as loaderSingleProduct} from './pages/Single-product';
+import SinglePost, {Loader as loaderSinglePost} from './pages/Single-post'; 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path:"/blog",
         Component:Blog
+      },
+      {
+        path:"/blog/:idPost",
+        Component:SinglePost,
+        loader:loaderSinglePost
       },
       {
         path:"/products",

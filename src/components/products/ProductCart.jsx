@@ -15,9 +15,9 @@ function ProductCart ({item, isChecked, isInCart, checkedItemToAdd}) {
                 <h5 className="card-title text-truncate">{item.title}</h5>
                 <p className="card-text text-price">قیمت: {item.price}$</p>
                 <div className="row">
-                <input type="checkbox" class="btn-check" id={`btn-check-${item.id}`} autocomplete="off"
+                <input type="checkbox" className="btn-check" id={`btn-check-${item.id}`} autoComplete="off"
                   checked={isChecked || false} onChange={()=> checkedItemToAdd(item.id)}/>
-                <label class={`btn btn-custom btn-sm col-7 shadow-sm d-flex justify-content-center
+                <label className={`btn btn-custom btn-sm col-7 shadow-sm d-flex justify-content-center
                  align-items-center ${isInCart.has(item.id) ? "disabled" : ""}`}
                  htmlFor={`btn-check-${item.id}`}>
                     {isInCart.has(item.id) ? (

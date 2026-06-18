@@ -14,7 +14,7 @@ function SkeletonProduct () {
                         <span className="placeholder col-4"></span>$
                     </p>
                     <div className="row">
-                        <button class="btn btn-custom btn-sm col-7 shadow-sm placeholder"></button>
+                        <button className="btn btn-custom btn-sm col-7 shadow-sm placeholder"></button>
                         <div className="col-5 placeholder-wave">
                             <button className="btn border-0 btn-more btn-sm col-11 placeholder placeholder-xs py-0"></button>
                         </div>

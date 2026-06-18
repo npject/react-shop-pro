@@ -24,14 +24,14 @@ function Footer() {
 
         {/* menu in mobile */}
         
-        <div class="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasMenu" aria-labelledby="offcanvasResponsiveLabel">
-          <div class="offcanvas-header">
-            <button type="button" class={`btn ${color == 'light' ? 'text-dark' : 'text-light'}`} data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu" aria-label="Close">
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasMenu" aria-labelledby="offcanvasResponsiveLabel">
+          <div className="offcanvas-header">
+            <button type="button" className={`btn ${color == 'light' ? 'text-dark' : 'text-light'}`} data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu" aria-label="Close">
                 <FontAwesomeIcon icon="fa-solid fa-close" />
             </button>
-            <h5 class={`offcanvas-title me-auto ${color == 'light' ? 'text-dark' : 'text-light'}`} id="offcanvasResponsiveLabel">منو</h5>
+            <h5 className={`offcanvas-title me-auto ${color == 'light' ? 'text-dark' : 'text-light'}`} id="offcanvasResponsiveLabel">منو</h5>
           </div>
-          <div class="offcanvas-body">
+          <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0 pe-0" id="main-menu">
                 <li className="nav-item ms-3" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
                     <NavLink className={({isActive,isPending})=>isActive ? `active nav-link py-3 px-1 ${colorNavLink}` : `nav-link py-3 px-1 ${colorNavLink}`}
@@ -71,8 +71,8 @@ function Footer() {
                   color == 'light' ? 'dark' : 'light'
                 )}>
                   <div className={`nav-link py-3 px-1 ${colorNavLink}`} >
-                    {color == 'light' && <FontAwesomeIcon class="fa-solid fa-sun" /> }
-                    {color == 'dark' && <FontAwesomeIcon class="fa-solid fa-moon" /> }
+                    {color == 'light' && <FontAwesomeIcon className="fa-solid fa-sun" /> }
+                    {color == 'dark' && <FontAwesomeIcon className="fa-solid fa-moon" /> }
                  </div>
                 </li>
               </ul>

@@ -33,9 +33,9 @@ function Cart() {
                             <p className="card-text text-price">قیمت: {item.price}$</p>
                             <div className="row">
                             <div className="btn-group btn-group-sm col-5">
-                                <button type="button" class="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-plus" /></button>
-                                <button type="button" class="btn btn-outline-secondary">{item.quantity}</button>
-                                <button type="button" class="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-minus" /></button>
+                                <button type="button" className="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-plus" /></button>
+                                <button type="button" className="btn btn-outline-secondary">{item.quantity}</button>
+                                <button type="button" className="btn btn-outline-secondary"><FontAwesomeIcon icon="fa-solid fa-minus" /></button>
                             </div>
                             <div className="col-2 d-flex align-items-center">
                               <FontAwesomeIcon onClick={()=> removeItem(item.id)}

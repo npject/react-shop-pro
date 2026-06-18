@@ -76,8 +76,8 @@ function Products() {
             <div className="row my-3">
                 <div className="col-lg-3 d-flex align-items-center mb-3">
                     <div className="input-group flex-row-reverse">
-                        <input onChange={(ev) => {setTitleProduct(ev.target.value.trim())}} class="form-control fs-14" type="search" placeholder="عنوان محصول..." aria-label="Search"/>
-                        <button onClick={() => {getData(page)}} class="btn fs-14 d-flex justify-content-center align-items-center" type="button">
+                        <input onChange={(ev) => {setTitleProduct(ev.target.value.trim())}} className="form-control fs-14" type="search" placeholder="عنوان محصول..." aria-label="Search"/>
+                        <button onClick={() => {getData(page)}} className="btn fs-14 d-flex justify-content-center align-items-center" type="button">
                             <FontAwesomeIcon icon="fa-solid fa-search" />
                         </button>
                     </div>
@@ -130,7 +130,7 @@ function Products() {
             </div>
             {loading && (<Loading />)}
             <div className="row">
-                {loading && Array.from({length: limit}).map(index => 
+                {loading && Array.from({length: limit}).map((_, index) => 
                         <SkeletonProduct key={index} />         
                 )}
                 {!loading && data.map(item=> (
@@ -171,8 +171,8 @@ function Products() {
             ${checkedCount > 0 ? 'visible' : 'hidden'}`}>
             <div className="position-relative" onClick={addCheckedItemsToCart}>
                 <CartShoppingSvg id="cartShoppingSvg"/>
-                <svg class="tick-icon" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" stroke="#00afb9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg className="tick-icon" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5" stroke="#00afb9" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <span className="badge rounded-circle fw-normal">{checkedCount > 0 ? checkedCount : ''}</span>
             </div>

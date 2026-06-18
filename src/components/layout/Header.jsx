@@ -14,9 +14,8 @@ function Header() {
 
     return(
         <>
-        <nav className="navbar navbar-expand-lg py-0" data-theme={color}>
-          <div className="container">
-            
+        <nav className="navbar sticky-top navbar-expand-lg py-0 shadow-sm" data-theme={color}>
+          <div className="container"> 
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

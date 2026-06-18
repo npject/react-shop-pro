@@ -8,7 +8,7 @@ function ProductCart ({item, isChecked, isInCart, checkedItemToAdd}) {
 
     return (
         <>
-        <div className="col-lg-3 mb-3">
+        <div className="col-lg-3 col-md-6 mb-3">
             <div className="card shadow-sm">
               <img src={item.images} className="card-img-top object-fit-contain img-fluid"/>
               <div className="card-body">

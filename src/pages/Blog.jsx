@@ -25,7 +25,7 @@ function Blog() {
                 <div className="row">
                     {loading && <Loading />}
                     {!loading && posts.map((post) => 
-                        <div className="col-lg-4 mb-3 post" key={post.id}>
+                        <div className="col-lg-4 col-md-6 mb-3 post" key={post.id}>
                             <div className="card">
                                 <Link to={`/blog/${post.id}`} target="_blank">
                                     <img src={`https://picsum.photos/seed/${post.id}/600/400`} className="card-img-top" alt="..."/>

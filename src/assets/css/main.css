@@ -344,6 +344,9 @@ code {
 #blog .post:nth-child(4n) .card-title{
   color: var(--text-post-4);
 }
+#blog .card-img-top{
+  aspect-ratio: 600 / 400;
+}
 /* ====================== SINGLE POST ====================== */
 #single-post .intro{
   /* background: #16596EFF;
@@ -455,7 +458,16 @@ code {
 }
 
 
-
+@media (max-width:576px) {
+  #single-post .intro{
+    height: 500px;
+  }
+}
+@media (min-width:576px) and (max-width:768px) {
+  #single-post .intro{
+    height: 400px;
+  }
+}
 
 /* ====================== ANIMATIONS ====================== */
 @keyframes popIn {

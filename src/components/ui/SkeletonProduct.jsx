@@ -1,7 +1,7 @@
 function SkeletonProduct () {
     return (
         <>
-        <div className="col-lg-3 mb-3 skeleton-product">
+        <div className="col-lg-3 col-md-6 mb-3 skeleton-product">
             <div className="card shadow-sm">
                 <div className="placeholder-wave">
                     <div className="card-img-top w-100 img-fluid placeholder"></div>

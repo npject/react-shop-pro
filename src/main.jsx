@@ -12,9 +12,10 @@ import ContactUs from './pages/Contact-us';
 import AboutUs from './pages/About-us';
 import Cart from './pages/Cart';
 import PageNotFound from './pages/PageNotFound';
-import SingleProduct, {loader as loaderSingleProduct} from './pages/Single-product';
-import SinglePost, {Loader as loaderSinglePost} from './pages/Single-post'; 
-
+import SingleProduct from './pages/Single-product';
+import {loader as loaderSingleProduct} from '/src/pages/Single-product.loader.js';
+import SinglePost from './pages/Single-post'; 
+import {loader as loaderSinglePost} from '/src/pages/Single-post.loader.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([

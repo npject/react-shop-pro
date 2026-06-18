@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/img/logo.png";
 import { useContext } from "react";
 import { themeContext } from "../../context/themeContext";
 import { productsContext } from "../../context/ProductsContext"; 
@@ -68,7 +67,11 @@ function Header() {
                 </li>
               </ul>
             </div>
-            <NavLink className="navbar-brand" to={"/"}><img src={logo} /></NavLink>
+            <NavLink className="navbar-brand" to={"/"}>
+              <span className={`${color === 'light' ? 'text-dark' : 'text-light'} fw-bold`}>Online</span>
+              <span className={`${color === 'light' ? 'text-dark' : 'text-light'} fw-light`}>Shop</span>
+              <FontAwesomeIcon icon="fa-solid fa-bag-shopping" className="color-main" />
+            </NavLink>
           </div>
         </nav>    
         </>

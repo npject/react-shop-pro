@@ -457,7 +457,7 @@ code {
   background-color: var(--bg-btn);
 }
 
-
+/* ====================== RESPONSIVE ====================== */
 @media (max-width:576px) {
   #single-post .intro{
     height: 500px;

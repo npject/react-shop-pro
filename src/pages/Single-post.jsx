@@ -1,11 +1,11 @@
 import { useLoaderData } from "react-router-dom";
+import { useContext, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from "swiper/modules";
-import { useContext, useState } from "react";
-import { themeContext } from "/src/context/themeContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { themeContext } from "context";
 
 
 function SinglePost () {

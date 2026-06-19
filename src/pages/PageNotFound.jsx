@@ -1,4 +1,4 @@
-import imgPageNotFound from '../assets/img/svg/undraw_page-not-found_6wni.svg';
+import imgPageNotFound from 'assets/img/svg/undraw_page-not-found_6wni.svg';
 
 function PageNotFound() {
     const body = document.querySelector('body');

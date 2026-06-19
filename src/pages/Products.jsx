@@ -1,11 +1,9 @@
 import { useEffect, useState, useContext, useMemo, useCallback } from "react";
-import Loading from "../components/ui/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CartShoppingSvg from "/src/assets/img/svg/undraw_empty-cart_574u.svg?react";
-import { productsContext } from "/src/context/ProductsContext";
-import ProductCart from "/src/components/products/ProductCart";
-import { themeContext } from "../context/themeContext";
-import SkeletonProduct from "../components/ui/SkeletonProduct";
+import { productsContext, themeContext } from "context";
+import { Loading, SkeletonProduct } from "components/ui";
+import ProductCart from "components/products/ProductCart";
+import CartShoppingSvg from "assets/img/svg/undraw_empty-cart_574u.svg?react";
 
 function Products() {
     const { color } = useContext(themeContext);

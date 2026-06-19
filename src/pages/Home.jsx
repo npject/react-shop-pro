@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { themeContext } from "../context/themeContext";
-
+import { themeContext } from "context";
 
 function Home() {
     const {color} = useContext(themeContext);

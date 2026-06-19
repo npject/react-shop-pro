@@ -4,18 +4,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './assets/css/main.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './components/layout/Layout';
-import Home from './pages/Home';
-import Blog from './pages/Blog';
-import Products from './pages/Products';
-import ContactUs from './pages/Contact-us';
-import AboutUs from './pages/About-us';
-import Cart from './pages/Cart';
-import PageNotFound from './pages/PageNotFound';
-import SingleProduct from './pages/Single-product';
-import {loader as loaderSingleProduct} from '/src/pages/Single-product.loader.js';
-import SinglePost from './pages/Single-post'; 
-import {loader as loaderSinglePost} from '/src/pages/Single-post.loader.js';
+import Layout from 'components/layout/Layout';
+import {
+  Home, 
+
+  // Blog
+  Blog, 
+  SinglePost, 
+  loaderSinglePost, 
+
+  // Products
+  Products, 
+  SingleProduct, 
+  loaderSingleProduct, 
+  Cart, 
+
+  ContactUs, 
+  AboutUs, 
+  PageNotFound 
+} from 'pages';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -51,7 +58,7 @@ const router = createBrowserRouter([
         Component:ContactUs
       },
       {
-        path:"/aboutus",
+        path:"/aboutUs",
         Component:AboutUs
       },
       {

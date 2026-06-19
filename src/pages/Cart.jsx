@@ -1,9 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { productsContext } from "../context/ProductsContext"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import imgEmpty from '../assets/img/svg/undraw_empty_4zx0.svg';
-
+import { productsContext } from "context";
+import imgEmpty from 'assets/img/svg/undraw_empty_4zx0.svg';
 
 function Cart() {
     const { changeCount } = useContext(productsContext);

@@ -1,9 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { themeContext } from "../../context/themeContext";
-import { productsContext } from "../../context/ProductsContext"; 
+import { useContext } from "react"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { themeContext, productsContext } from "context";
 
 function Header() {
     const { count } = useContext(productsContext);

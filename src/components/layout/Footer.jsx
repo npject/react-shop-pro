@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { themeContext } from "/src/context/themeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { themeContext } from "context";
 
 function Footer() {
     const { color,changeColor } = useContext(themeContext);

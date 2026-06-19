@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Loading from "../components/ui/Loading";
+import { Loading } from "components/ui";
 
 function Blog() {
     const [loading,setLoading] = useState(false);

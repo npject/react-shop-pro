@@ -1,9 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { themeContext } from "../context/themeContext";
-import { productsContext } from "../context/ProductsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { themeContext, productsContext } from "context";
 
 function SingleProduct() {
     const {response} = useLoaderData();

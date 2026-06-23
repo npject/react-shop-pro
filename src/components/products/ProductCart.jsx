@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SelectionContext } from "context";
+import { useProductCardSelection } from "hooks";
 
 
-function ProductCart ({item, isChecked, isInCart, checkedItemToAdd}) {
+function ProductCart ({ item }) {
+    const { checkedItems } = useContext(SelectionContext);
+    const { isInCart, checkedItemToAdd } = useProductCardSelection();
+    const isChecked= !!checkedItems[item.id];
     console.log('Render ProductCard', item.id, { isChecked, isInCart });
 
     return (

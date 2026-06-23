@@ -1,0 +1,6 @@
+export const ACTION_TYPES = {
+    SET_FILTER: 'SET_FILTER',
+    SET_PAGE: 'SET_PAGE',
+    RESET_FILTERS: 'RESET_FILTERS'
+};
+

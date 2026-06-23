@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import { ThemeProvider, ProductsProvider } from "context";
+import { ThemeProvider, ProductsProvider, SelectionProvider } from "context";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
@@ -11,13 +11,15 @@ function Layout() {
     return(
         <>
         <ThemeProvider>
-            <ProductsProvider>
-                <Header />
-                <div className="main">
-                    <Outlet />
-                </div>
-                <Footer />
-            </ProductsProvider>
+            <SelectionProvider>
+                <ProductsProvider>
+                    <Header />
+                    <div className="main">
+                        <Outlet />
+                    </div>
+                    <Footer />
+                </ProductsProvider>
+            </SelectionProvider>
         </ThemeProvider>
         </>
     );

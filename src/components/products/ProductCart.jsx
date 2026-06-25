@@ -15,7 +15,7 @@ function ProductCart ({ item }) {
         <>
         <div className="col-lg-3 col-md-6 mb-3">
             <div className="card shadow-sm">
-              <img src={item.images} className="card-img-top object-fit-contain img-fluid"/>
+              <img src={item.thumbnail} className="card-img-top object-fit-contain img-fluid"/>
               <div className="card-body">
                 <h5 className="card-title text-truncate">{item.title}</h5>
                 <p className="card-text text-price">قیمت: {item.price}$</p>

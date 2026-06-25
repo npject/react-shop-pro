@@ -1,1 +1,1 @@
-export { fetchProducts, fetchMultipleProduct, fetchProductById } from './productsService.js';
+export { fetchProducts, fetchMultipleProduct, fetchProductById, fetchCategoryList } from './productsService.js';

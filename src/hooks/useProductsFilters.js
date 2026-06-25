@@ -9,6 +9,9 @@ const filtersReducer = (state, action) => {
         case ACTION_TYPES.SET_PAGE:
             return { ...state, page: action.value };
 
+        case ACTION_TYPES.RESET_FILTER:
+            return { ...state, [action.field]: "", page: 1 };
+        
         default:
             return state;
     }
@@ -16,11 +19,29 @@ const filtersReducer = (state, action) => {
 export function useProductsFilters() {
     const [state, dispatch] = useReducer(filtersReducer, {
         page: 1,
-        minPrice: 1,
-        maxPrice: 1000,
-        categoryId: 0,
-        titleProduct: "",
+        //minPrice: 1,
+        //maxPrice: 1000,
+        category: "",
+        searchProduct: "",
+        sortBy: "",
+        order: "asc"
     });
 
-    return { state, dispatch };
+    const setFilter = (field, value) => {
+        dispatch({ type: ACTION_TYPES.SET_FILTER, field, value });
+        if (field === "category"){
+            resetFilter("searchProduct");
+        }
+        if (field === "searchProduct"){
+            resetFilter("category");
+        }
+    };
+    const setPage = (value) => {
+        dispatch({ type: ACTION_TYPES.SET_PAGE, value });
+    };
+    const resetFilter = (field) => {
+        dispatch({ type: ACTION_TYPES.RESET_FILTER, field });
+    }
+    
+    return { state, setFilter, setPage };
 }

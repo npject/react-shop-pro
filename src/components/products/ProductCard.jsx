@@ -1,14 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SelectionContext } from "context";
-import { useProductCardSelection } from "hooks";
 
 
-function ProductCart ({ item }) {
-    const { checkedItems } = useContext(SelectionContext);
-    const { isInCart, checkedItemToAdd } = useProductCardSelection();
-    const isChecked= !!checkedItems[item.id];
+function ProductCard ({ item, isChecked, isInCart, checkedItemToAdd }) {
     console.log('Render ProductCard', item.id, { isChecked, isInCart });
 
     return (
@@ -54,4 +49,4 @@ function ProductCart ({ item }) {
         </>
     )
 }
-export default React.memo(ProductCart);
+export default React.memo(ProductCard);

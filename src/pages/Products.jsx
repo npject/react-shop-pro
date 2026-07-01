@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { themeContext, SelectionContext } from "context";
 import { Loading, SkeletonProduct } from "components/ui";
-import ProductCart from "components/products/ProductCart";
+import ProductCard from "components/products/ProductCard";
 import CartShoppingSvg from "assets/img/svg/undraw_empty-cart_574u.svg?react";
 import { useProductsFilters, useProductsSelection, useCart } from "hooks";
 import { fetchProducts, fetchMultipleProduct, fetchCategoryList } from "services";
@@ -20,7 +20,7 @@ function Products() {
     const [totalPages, setTotalPages] = useState(1);
 
     const { checkedItems, setCheckedItems } = useContext(SelectionContext);
-    const { checkedItemsCount } = useProductsSelection();
+    const { checkedItemsCount, isInCart, checkedItemToAdd } = useProductsSelection();
     const { addCheckedItemsToCart } = useCart() ;
 
     const getData = async ()=>{
@@ -73,12 +73,12 @@ function Products() {
                         <SkeletonProduct key={index} />         
                 )}
                 {!loading && data.map(item=> (
-                 <ProductCart 
+                 <ProductCard 
                     key={item.id}
                     item={item}
-                    //isChecked={!!checkedItems[item.id]}
-                    //isInCart={isInCart}
-                    //checkedItemToAdd={checkedItemToAdd}
+                    isChecked={!!checkedItems[item.id]}
+                    isInCart={isInCart}
+                    checkedItemToAdd={checkedItemToAdd}
                  />   
                 ))}
             </div>

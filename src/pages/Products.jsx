@@ -6,6 +6,7 @@ import ProductCart from "components/products/ProductCart";
 import CartShoppingSvg from "assets/img/svg/undraw_empty-cart_574u.svg?react";
 import { useProductsFilters, useProductsSelection, useCart } from "hooks";
 import { fetchProducts, fetchMultipleProduct, fetchCategoryList } from "services";
+import ProductFilters from "components/products/productFilters";
 
 
 function Products() {
@@ -60,66 +61,12 @@ function Products() {
         <>
         <section id="products" data-bs-theme={color}>
         <div className="container">
-            <div className="row my-3">
-                <div className="col-lg-3 d-flex align-items-center mb-3">
-                    <div className="input-group flex-row-reverse">
-                        <input onChange={(ev) => { setFilter('searchProduct', ev.target.value.trim()) }} value={filtersState.searchProduct ? filtersState.searchProduct : ''}
-                         className="form-control fs-14" type="search" placeholder="جستجو..." aria-label="Search"/>
-                        <button onClick={() => { getData() }} className="btn fs-14 d-flex justify-content-center align-items-center" type="button">
-                            <FontAwesomeIcon icon="fa-solid fa-search" />
-                        </button>
-                    </div>
-                </div>
-                <div className="col-lg-3 d-flex align-items-center mb-3">
-                    <div className="input-group flex-row-reverse">
-                      <select value={filtersState.category} onChange={(ev) => { setFilter('category', ev.target.value) }}
-                       className="form-select fs-14" id="inputGroupSelect02">
-                        <option value="">همه محصولات</option>
-                        {categoryList.map(item => (
-                            <option value={item}>{item}</option>
-                        ))}
-                      </select>
-                      <label className="input-group-text fs-14" htmlFor="inputGroupSelect02">
-                        <FontAwesomeIcon icon="fa-solid fa-layer-group" />
-                      </label>
-                    </div>
-                </div>
-                <div className="col-lg-3 d-flex align-items-center mb-3">
-                    <div className="input-group flex-row-reverse">
-                      <select onChange={(ev) => { setFilter('sortBy', ev.target.value) }}
-                       className="form-select fs-14" id="inputGroupSelect02">
-                        <option className="fs-14" value="">...</option>
-                        <option className="fs-14" value="title">عنوان</option>
-                        <option className="fs-14" value="category">دسته بندی</option>
-                        <option className="fs-14" value="price">قیمت</option>
-                      </select>
-                      <select onChange={(ev) => { setFilter('order', ev.target.value) }}
-                       className="form-select fs-14" id="inputGroupSelect02">
-                        <option className="fs-14" value="asc">صعودی</option>
-                        <option className="fs-14" value="desc">نزولی</option>
-                      </select>
-                      <label className="input-group-text fs-14" htmlFor="inputGroupSelect02">
-                        <FontAwesomeIcon icon="fa-solid fa-sort" />
-                      </label>
-                    </div>
-                </div>    
-                {/* <div className="col-lg-3">
-                    <div className="row">
-                        <div className="col-6">
-                            <label htmlFor="range-price-min" className="form-label fs-14 color-main">حداقل قیمت:</label>
-                            <input onChange={(ev) => { setFilter('minPrice', Number(ev.target.value)) }}
-                             type="range" className="form-range" min="0" max="999" value={filtersState.minPrice} id="range-price-min"/>
-                            <output className="text-price" htmlFor="range-price-min" id="range-val-price-min" aria-hidden="true">{filtersState.minPrice}$</output>
-                        </div>
-                        <div className="col-6">
-                            <label htmlFor="range-price-max" className="form-label fs-14 color-main">حداکثر قیمت:</label>
-                            <input onChange={(ev) => { setFilter('maxPrice', Number(ev.target.value)) }}
-                             type="range" className="form-range" min="1" max="1000" value={filtersState.maxPrice} id="range-price-max"/>
-                            <output className="text-price" htmlFor="range-price-max" id="range-val-price-max" aria-hidden="true">{filtersState.maxPrice}$</output>
-                        </div>
-                    </div>
-                </div> */}
-            </div>
+            <ProductFilters 
+                filters={filtersState}
+                setFilter={setFilter}
+                categoryList={categoryList}
+                onSearch={getData}
+            />
             {loading && (<Loading />)}
             <div className="row">
                 {loading && Array.from({length: limit}).map((_, index) => 

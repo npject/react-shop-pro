@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-function ProductCart ({item, isChecked, isInCart, checkedItemToAdd}) {
+function ProductCard ({ item, isChecked, isInCart, checkedItemToAdd }) {
     console.log('Render ProductCard', item.id, { isChecked, isInCart });
 
     return (
         <>
         <div className="col-lg-3 col-md-6 mb-3">
             <div className="card shadow-sm">
-              <img src={item.images} className="card-img-top object-fit-contain img-fluid"/>
+              <img src={item.thumbnail} className="card-img-top object-fit-contain img-fluid"/>
               <div className="card-body">
                 <h5 className="card-title text-truncate">{item.title}</h5>
                 <p className="card-text text-price">قیمت: {item.price}$</p>
@@ -49,4 +49,4 @@ function ProductCart ({item, isChecked, isInCart, checkedItemToAdd}) {
         </>
     )
 }
-export default React.memo(ProductCart);
+export default React.memo(ProductCard);

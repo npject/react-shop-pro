@@ -3,7 +3,7 @@ import Select from "react-select";
 import "assets/css/custom-select.css";
 
 
-function ProductFilters ({ filters, setFilter, categoryList, onSearch }) {
+function ProductFilters ({ filters, setFilter, setMultipleFilters, categoryList, onSearch }) {
     const categoryOptions = [
         ...categoryList.map(item => ({
             value: item, 
@@ -60,7 +60,7 @@ function ProductFilters ({ filters, setFilter, categoryList, onSearch }) {
                     onChange={(selected) => setFilter('category', selected?.value || '') }
                     value={categoryOptions.find(option =>
                         option.value === filters.category
-                    )}
+                    ) || ''}
                     isRtl
                     isClearable
                     isSearchable
@@ -75,13 +75,17 @@ function ProductFilters ({ filters, setFilter, categoryList, onSearch }) {
                     options={sortOptions}
                     onChange={(option) => {
                         if (!option) {
-                            setFilter("sortBy", "");
-                            setFilter("order", "");
+                            setMultipleFilters({
+                                "sortBy": "",
+                                "order": ""
+                            });
                             return;
                         }
                         const [sortBy, order] = option.value.split('-');
-                        setFilter("sortBy", sortBy);
-                        setFilter("order", order);
+                        setMultipleFilters({
+                            "sortBy": sortBy,
+                            "order": order
+                        });
                     }}
                     value={
                         sortOptions.flatMap(group => group.options).find(option =>

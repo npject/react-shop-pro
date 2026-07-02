@@ -14,7 +14,7 @@ function Products() {
     const [loading,setLoading] = useState(false);
     const [data,setData] = useState([]);
     const [categoryList, setCategoryList] = useState([]);
-    const { state: filtersState, setFilter, setPage } = useProductsFilters();
+    const { state: filtersState, setFilter, setMultipleFilters, setPage } = useProductsFilters();
     const [hasMore,setHasMore] = useState(true);
     const limit = 20;
     const [totalPages, setTotalPages] = useState(1);
@@ -64,6 +64,7 @@ function Products() {
             <ProductFilters 
                 filters={filtersState}
                 setFilter={setFilter}
+                setMultipleFilters={setMultipleFilters}
                 categoryList={categoryList}
                 onSearch={getData}
             />

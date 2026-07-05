@@ -1,0 +1,69 @@
+{
+  "categories": {
+    "مد و زیبایی": {
+      "illustration": "undraw_jewelry_39lx.svg",
+      "items": [
+        { "slug": "beauty", "name": "Beauty", "icon": "fa-solid fa-wand-magic-sparkles", "color": "#FADADD" },
+        { "slug": "fragrances", "name": "Fragrances", "icon": "fa-solid fa-spray-can-sparkles", "color": "#E0BBE4" },
+        { "slug": "skin-care", "name": "Skin Care", "icon": "fa-solid fa-hand-holding-heart", "color": "#F8BBD0" },
+        { "slug": "sunglasses", "name": "Sunglasses", "icon": "fa-solid fa-glasses", "color": "#FFF9C4" }
+      ]
+    },
+    "زنانه": {
+      "illustration": "undraw_trying-on-clothes_ht5p.svg",
+      "items": [
+        { "slug": "womens-dresses", "name": "Dresses", "icon": "fa-solid fa-person-dress", "color": "#F8BBD0" },
+        { "slug": "womens-shoes", "name": "Shoes", "icon": "fa-solid fa-shoe-prints", "color": "#F48FB1" },
+        { "slug": "womens-bags", "name": "Bags", "icon": "fa-solid fa-bag-shopping", "color": "#FCE4EC" },
+        { "slug": "womens-jewellery", "name": "Jewellery", "icon": "fa-solid fa-gem", "color": "#E1BEE7" },
+        { "slug": "womens-watches", "name": "Watches", "icon": "fa-solid fa-clock", "color": "#B2DFDB" },
+        { "slug": "tops", "name": "Tops", "icon": "fa-solid fa-vest", "color": "#F3E5F5" }
+      ]
+    },
+    "مردانه": {
+      "illustration": "undraw_career-progress_vfq5.svg",
+      "items": [
+        { "slug": "mens-shirts", "name": "Shirts", "icon": "fa-solid fa-shirt", "color": "#CFD8DC" },
+        { "slug": "mens-shoes", "name": "Shoes", "icon": "fa-solid fa-shoe-prints", "color": "#FFCCBC" },
+        { "slug": "mens-watches", "name": "Watches", "icon": "fa-solid fa-clock", "color": "#B0BEC5" }
+      ]
+    },
+    "الکترونیک": {
+      "illustration": "undraw_smartphone_9zbj.svg",
+      "items": [
+        { "slug": "smartphones", "name": "Smartphones", "icon": "fa-solid fa-mobile-screen-button", "color": "#B2EBF2" },
+        { "slug": "laptops", "name": "Laptops", "icon": "fa-solid fa-laptop", "color": "#B3E5FC" },
+        { "slug": "tablets", "name": "Tablets", "icon": "fa-solid fa-tablet-screen-button", "color": "#E1F5FE" },
+        { "slug": "mobile-accessories", "name": "Mobile Accessories", "icon": "fa-solid fa-headphones", "color": "#C5CAE9" }
+      ]
+    },
+    "خانه و آشپزخانه": {
+      "illustration": "undraw_relaxing-at-home_qta9.svg",
+      "items": [
+        { "slug": "furniture", "name": "Furniture", "icon": "fa-solid fa-couch", "color": "#D4E09B" },
+        { "slug": "home-decoration", "name": "Home Decoration", "icon": "fa-solid fa-house-chimney", "color": "#E2F0CB" },
+        { "slug": "kitchen-accessories", "name": "Kitchen Accessories", "icon": "fa-solid fa-utensils", "color": "#FFF9C4" }
+      ]
+    },
+    "ورزش": {
+      "illustration": "undraw_golf_wmi1.svg",
+      "items": [
+        { "slug": "sports-accessories", "name": "Sports Accessories", "icon": "fa-solid fa-dumbbell", "color": "#FFCDD2" }
+      ]
+    },
+    "وسایل نقلیه": {
+      "illustration": "undraw_car-salesman_ni2a.svg",
+      "items": [
+        { "slug": "vehicle", "name": "Vehicle", "icon": "fa-solid fa-car", "color": "#DCEDC8" },
+        { "slug": "motorcycle", "name": "Motorcycle", "icon": "fa-solid fa-motorcycle", "color": "#FFECB3" }
+      ]
+    },
+    "مواد غذایی": {
+      "illustration": "undraw_breakfast_rgx5.svg",
+      "items": [
+        { "slug": "groceries", "name": "Groceries", "icon": "fa-solid fa-basket-shopping", "color": "#FFDAC1" }
+      ]
+    }
+  }
+}
+  

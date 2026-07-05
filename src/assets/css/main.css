@@ -23,6 +23,7 @@
   --bg-card: #f1ede7;
   --border-card-hover: var(--cerulean);
   --color-paragraph: var(--eerie-black);
+  --bg-hero-slider: #DDE6EA;
   /* pallette posts */
   --bg-post-1: #16596e3b;
   --bg-post-2: #00afb921;
@@ -50,6 +51,7 @@
   --bg-card: #3c444c;
   --border-card-hover: var(--verdigris);
   --color-paragraph: var(--light-color);
+  --bg-hero-slider: #4f6677;
   /* pallette posts */
   --bg-post-1: transparent;
   --bg-post-2: transparent;
@@ -390,6 +392,115 @@ code {
 .swiper-pagination-bullet-active{
   background-color: var(--border-card-hover) !important;
 }
+/* ====================== CATEGORY SWIPER ====================== */
+#categorySwiper{
+  height: 380px;
+  padding: 20px 0 20px 0;
+  background-color: var(--bg-hero-slider);
+}
+#categorySwiper .swiper-slide{
+  height: 320px;
+  padding: 10px 0;
+  background-color: var(--bg-hero-slider);
+}
+#categorySwiper .swiper-slide .category-image{
+  height: 300px;
+}
+[data-theme="dark"] #categorySwiper .swiper-slide:nth-child(3) .category-image{
+  filter: drop-shadow(0px 0px 0px #000);
+}
+#categorySwiper .swiper-slide .category-links{
+  width: 75%;
+}
+#categorySwiper .swiper-slide .category-item:hover .category-icon,
+#categorySwiper .swiper-slide .category-item:hover span{
+  filter: brightness(0.95);
+}
+#categorySwiper .swiper-slide .category-icon{
+  width: 60px;
+  height: 60px;
+}
+#categorySwiper.swiper-horizontal > .swiper-pagination-bullets, 
+#categorySwiper .swiper-pagination-bullets.swiper-pagination-horizontal{
+  width: 144px !important;
+  left: 182px !important;
+  bottom: 0px !important;
+  background-color: var(--bg-hero-slider);
+  padding: 4px 8px 16px 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: var(--bg-body);
+}
+#categorySwiper .swiper-pagination-bullets::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -24px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--bg-hero-slider);
+  border-bottom-right-radius: 8px;
+  box-shadow: 12px 0px 0px 0px var(--bg-body);
+}
+#categorySwiper .swiper-pagination-bullets::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -24px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--bg-hero-slider);
+  border-bottom-left-radius: 8px;
+  box-shadow: -12px 0px 0px 0px var(--bg-body);
+}
+#categorySwiper .swiper-pagination-bullet{
+  background-color: var(--bg-hero-slider);
+  opacity: 1;
+}
+#categorySwiper .custom-prev-btn,
+#categorySwiper .custom-next-btn{
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  color: var(--bg-btn);
+}
+#categorySwiper .custom-prev-btn{
+  left: 126px;
+}
+#categorySwiper .custom-next-btn{
+  left: 70px;
+}
+/* autoplay progress */
+.autoplay-progress {
+  /* position: absolute; */
+  left: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold; */
+  color: var(--bg-btn);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  /* position: absolute;
+  left: 0;
+  top: 0px; */
+  z-index: 10;
+  /* width: 100%;
+  height: 100%; */
+  stroke-width: 4px;
+  stroke: var(--bg-btn);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
 /* ====================== UTILITY ====================== */
 #loading .spinner-border{
   color: var(--verdigris);
@@ -462,10 +573,54 @@ code {
   #single-post .intro{
     height: 500px;
   }
+  
 }
 @media (min-width:576px) and (max-width:768px) {
   #single-post .intro{
     height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width:991px) {
+  #categorySwiper{
+    height: 420px;
+  } 
+  #categorySwiper .swiper-slide .category-links{
+    width: 70% !important;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:767px) {
+  #categorySwiper{
+    height: 480px;
+  } 
+}
+
+@media (max-width:991px) {
+  #categorySwiper .swiper-slide .category-image{
+    height: 150px;
+  }
+  #categorySwiper .swiper-slide{
+    height: 400px;
+  }
+  #categorySwiper .swiper-slide .category-links{
+    width: 100%;
+  }
+  #categorySwiper .swiper-slide .category-item{
+    position: relative;
+  }
+  #categorySwiper .swiper-slide .category-icon{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    right: 0;
+    z-index: 2;
+  }
+  #categorySwiper .swiper-slide span{
+    position: relative;
+    right: -.5rem;
+    z-index: 1;
   }
 }
 

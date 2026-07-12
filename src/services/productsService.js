@@ -64,3 +64,14 @@ export const fetchCategoryList = async () => {
         console.log("Error fetching category list::::", error);
     }
 }
+
+export const fetchTopProducts = async () => {
+    try {
+        const url = `${BASE_URL}?sortBy=rating&order=desc&select=title,price,rating,category,thumbnail&limit=194`;
+        const data = await fetch(url);
+        const response = await data.json();
+        return { response };
+    } catch (error) {
+        console.log("Error fetching top products::::", error);
+    }
+}

@@ -110,6 +110,12 @@ code {
 .color-main{
   color: var(--bg-btn);
 }
+.bg-main{
+  background-color: var(--bg-btn);
+}
+.color-ccc{
+  color: #ccc;
+}
 /* ====================== NAV ====================== */
 .navbar{
   background-color: var(--bg-main);
@@ -142,8 +148,7 @@ code {
   background-color: var(--bg-card);
   transition: all ease-in-out .4s;
 }
-#products .card .btn-custom,
-#cart .card .btn-custom{
+.btn-custom{
   border-color: var(--bg-btn);
   color: var(--bg-btn);
   transition: all ease-in-out .4s;
@@ -164,7 +169,9 @@ code {
   transition: all ease-in-out .4s;
 }
 #products .card:hover .btn-custom,
-#cart .card:hover .btn-custom{
+#cart .card:hover .btn-custom,
+#single-product .card .btn-custom:hover,
+#home .btn-custom:hover{
   background-color: var(--bg-btn);
   color: #fff;
   transition: all ease-in-out .4s;
@@ -175,7 +182,8 @@ code {
   color: #fff;
 }
 #products .text-price,
-#cart .text-price{
+#cart .text-price,
+#home .text-price{
   color: var(--bittersweet);
 }
 #products .card img,
@@ -271,16 +279,6 @@ code {
 /* ====================== SINGLE PRODUCT ====================== */
 #single-product .card{
   background-color: transparent;
-}
-#single-product .card .btn-custom{
-  border-color: var(--bg-btn);
-  color: var(--bg-btn);
-  transition: all ease-in-out .4s;
-}
-#single-product .card .btn-custom:hover{
-  background-color: var(--bg-btn);
-  color: #fff;
-  transition: all ease-in-out .4s;
 }
 #single-product .text-price{
   color: var(--bittersweet);
@@ -427,31 +425,31 @@ code {
   bottom: 0px !important;
   background-color: var(--bg-hero-slider);
   padding: 4px 8px 16px 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   background-color: var(--bg-body);
 }
 #categorySwiper .swiper-pagination-bullets::before{
   content: '';
   position: absolute;
   bottom: 0;
-  left: -24px;
-  width: 24px;
+  left: -50px;
+  width: 50px;
   height: 24px;
   background-color: var(--bg-hero-slider);
-  border-bottom-right-radius: 8px;
-  box-shadow: 12px 0px 0px 0px var(--bg-body);
+  border-bottom-right-radius: 16px;
+  box-shadow: 16px 0px 0px 0px var(--bg-body);
 }
 #categorySwiper .swiper-pagination-bullets::after{
   content: '';
   position: absolute;
   bottom: 0;
-  right: -24px;
-  width: 24px;
+  right: -50px;
+  width: 50px;
   height: 24px;
   background-color: var(--bg-hero-slider);
-  border-bottom-left-radius: 8px;
-  box-shadow: -12px 0px 0px 0px var(--bg-body);
+  border-bottom-left-radius: 16px;
+  box-shadow: -16px 0px 0px 0px var(--bg-body);
 }
 #categorySwiper .swiper-pagination-bullet{
   background-color: var(--bg-hero-slider);
@@ -500,6 +498,51 @@ code {
   stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+/* ====================== TOP PRODUCTS SWIPER ====================== */
+#topProductsSwiper{
+  min-height: 370px;
+}
+#topProductsSwiper .swiper-wrapper{
+  margin: 20px 0;
+}
+#topProductsSwiper .card{
+  transition: all ease-in-out .2s;
+}
+#topProductsSwiper .card:hover{
+  scale: 1.02;
+  transition: all ease-in-out .2s;
+  filter: brightness(.95);
+}
+#topProductsSwiper .card:hover .badge{
+  transition: all ease-in-out .2s;
+}
+#topProductsSwiper .card:hover .badge-top{
+  top: 10px;
+}
+#topProductsSwiper .card:hover .badge-bottom{
+  top: 40px;
+}
+#topProductsSwiper .card .badge:hover{
+  filter: none;
+}
+#topProductsSwiper .card .badge{
+  right: 50%;
+  transform: translateX(50%);
+  filter: sepia(.3);
+  transition: all ease-in-out .2s;
+}
+#topProductsSwiper .card .badge-top{
+  top: -3rem;
+}
+#topProductsSwiper .card .badge-bottom{
+  top: -2rem;
+}
+#topProductsSwiper .card .card-img-top{
+  aspect-ratio: 1 / 1;
+}
+#topProductsSwiper .card .card-title{
+  direction: ltr;
 }
 /* ====================== UTILITY ====================== */
 #loading .spinner-border{
@@ -573,7 +616,6 @@ code {
   #single-post .intro{
     height: 500px;
   }
-  
 }
 @media (min-width:576px) and (max-width:768px) {
   #single-post .intro{

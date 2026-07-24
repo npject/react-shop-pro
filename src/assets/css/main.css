@@ -171,7 +171,8 @@ code {
 #products .card:hover .btn-custom,
 #cart .card:hover .btn-custom,
 #single-product .card .btn-custom:hover,
-#home .btn-custom:hover{
+#home .btn-custom:hover,
+#contact-us .btn-custom:hover{
   background-color: var(--bg-btn);
   color: #fff;
   transition: all ease-in-out .4s;
@@ -543,6 +544,19 @@ code {
 }
 #topProductsSwiper .card .card-title{
   direction: ltr;
+}
+/* ====================== ABOUT US ====================== */
+#about-us .social-media .social-link:hover{
+  color: var(--white-black);
+}
+#about-us #social-dashboard-svg,
+#contact-us #contact-us-svg{
+  filter: drop-shadow(-1px 1px 0px var(--bg-main));
+}
+/* ====================== CONTACT US ====================== */
+#contact-us #input-message{
+  height: 100px;
+  max-height: 150px;
 }
 /* ====================== UTILITY ====================== */
 #loading .spinner-border{

@@ -24,7 +24,7 @@ function Cart() {
         <div className="container my-5">
             <div className="row">
                 {itemsCart.length ? itemsCart.map(item=>
-                    <div className="col-lg-3 mb-3" key={item.id}>
+                    <div className="col-lg-3 col-md-6 mb-3" key={item.id}>
                         <div className="card shadow-sm">
                           <img src={item.images} className="card-img-top object-fit-contain img-fluid"/>
                           <div className="card-body">

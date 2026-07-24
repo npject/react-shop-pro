@@ -27,12 +27,12 @@ function Header() {
                   </div>
                  </NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink className={({isActive})=>isActive ? `active nav-link py-3 px-1 ${colorNavLink}` : `nav-link py-3 px-1 ${colorNavLink}`}
-                 to={"/blog"}>
+                 to={"#"}>
                   <FontAwesomeIcon icon="fa-solid fa-circle-user"/>
                  </NavLink>
-                </li>
+                </li> */}
                 <li className="nav-item" onClick={()=> changeColor(
                   color == 'light' ? 'dark' : 'light'
                 )}>

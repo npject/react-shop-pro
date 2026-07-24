@@ -19,10 +19,9 @@ function Blog() {
 
     return(
         <>
-        <h1>blog</h1>
         <section id="blog">
             <div className="container">
-                <div className="row">
+                <div className="row my-5">
                     {loading && <Loading />}
                     {!loading && posts.map((post) => 
                         <div className="col-lg-4 col-md-6 mb-3 post" key={post.id}>

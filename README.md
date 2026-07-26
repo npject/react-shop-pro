@@ -1,16 +1,50 @@
-# React + Vite
+# 🌐 React Shop Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A practice e-commerce project built with **React 19** to learn component-based development and API integration.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Multi-Select Workflow**: Enhanced UX allows users to select multiple products directly from the list and add them to the cart in a single action.
+- **Mini-Cart Tracker**: A persistent bottom-right component to monitor selected items count and manage them without page reloads.
+- **Product Management**: A dynamic system that fetches and displays products from an API, featuring search, category filtering, and sorting capabilities handled by the backend.
+- **Modern UI Components**: Interactive product sliders powered by Swiper.js and intuitive inputs via React-Select.
+- **Clean Architecture**: Implemented the **Barrel Pattern** for cleaner imports and better project structure.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 19
+- **Routing**: React Router v7
+- **Styling**: Bootstrap 5, FontAwesome
+- **Components/UI**: Swiper.js, React-Select
+- **Patterns**: Barrel Pattern for modular imports
+
+
+## 📁 Project Structure
+
+- `src/components/` — modular UI components organized by feature (Layout, Products, Sliders, and UI elements)
+- `src/constants/` — static values
+- `src/context/` — global state management
+- `src/data/` — static JSON files
+- `src/hooks/` — custom React hooks
+- `src/pages/` — main page components 
+- `src/playground/` — experimental learning files
+- `src/services/` — API calling logic and data fetching services
+- `src/utils/` — helper functions
+
+
+## 💡 Notes
+
+This is my second React project, built to practice core React concepts and API integration. It is not a complete e-commerce store, but a focused practice of its key features. I used Bootstrap 5 for styling during this stage, and I am now moving towards learning Tailwind CSS.
+
+
+## 🚀 Getting Started
+```bash
+npm install
+npm run dev
+```
+
+## ✍ Author
+
+NPJect
